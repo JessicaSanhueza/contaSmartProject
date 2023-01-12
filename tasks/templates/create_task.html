@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    <section>
+
+            <h1 class="text-center text-light">Crear Requerimiento</h1 >
+            <form action="/tasks/create/" method="POST" class="card card-body">
+
+                {% csrf_token %}
+                {{form}}
+    <button class="btn btn-dark">
+        Guardar
+    </button>
+</form>
+    </section>
+</main>
+
+{% endblock %}

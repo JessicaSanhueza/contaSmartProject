@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main> <!--class="container "-->
+     <!-- class="row" -->
+        <section>
+    <form action="/signin/" method="POST" > <!-- class="card card-body" -->
+    {% csrf_token %}
+<h1 class="text-center text-light">ContaSMART</h1>
+    {{error}}
+    {% csrf_token %}
+     <div class="mb-3">
+         <label for="username" class="text-light">Usuario:</label>
+         <input type="text" name="username" id="username"
+         class="form-control" placeholder="Nombre de Usuario">
+     </div>
+                     <div class="mb-3">
+         <label for="password" class="text-light">Contraseña:</label>
+         <input type="password" name="password" id="password"
+         class="form-control" placeholder="Ingresar contraseña">
+     </div>
+
+    <button class="btn btn-dark text-center">Ingresar
+    </button>
+</form>
+</section>
+
+</main>
+
+
+{% endblock %}

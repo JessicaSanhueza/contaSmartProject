@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<main >
+    <section>
+<div >
+<h1 class="text-center display-3 py-5 text-light">Requerimientos</h1>
+<ul class="list-group">
+    {% for task in tasks %}
+    <a class="list-group-item" href="{% url 'task_detail' task.id %}">
+        {% if task.important %}
+  <header class="d-flex justify-content-between">
+      <h3 class="fw-bold text-success">{{task.title}}</h3>
+        {% else %}
+        <h3 class="fw-bold">{{task.title}}</h3>
+        {% endif %}
+      <p> <br> {{task.user.username}}</p>
+  </header>
+        <p class="text-light">{{task.description}}</p>
+        </a>
+    {% endfor %}
+</ul>
+    </div>
+</main>
+</div>
+{% endblock %}

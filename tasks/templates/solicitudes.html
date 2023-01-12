@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container">
+    <div class="row">
+<div >
+<h1 class="text-center display-3 py-5 text-white">Solicitudes</h1>
+<ul class="list-group">
+    {% for solicitud in solicitudes %}
+<!--
+  <header class="d-flex justify-content-between">
+        <h1 class="fw-bold">{{solicitud.title}}</h1>
+      <p>{{solicitud.user.username}}</p>
+  </header>
+        <p>{{solicitud.description}}</p>
+        <p>{{solicitud.created}}</p>
+        <p>{{solicitud.estado}}</p>
+        Fecha <p>{{solicitud.datecompleted}}</p> -->
+
+
+    <div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{solicitud.title}}</h5>
+    <h6 class="card-subtitle  text-muted">Solicitante: {{solicitud.user.username}}</h6>
+    <p class="card-text">{{solicitud.description}}</p>
+      <p>Fecha creación: {{solicitud.created}}</p>
+        <p>Estado: {{solicitud.estado}}</p>
+        <p>Fecha resolución: {{solicitud.datecompleted}}</p>
+  </div>
+</div>
+
+    {% endfor %}
+</ul>
+    </div>
+</main>
+</div>
+{% endblock %}
